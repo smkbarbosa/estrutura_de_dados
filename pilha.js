@@ -11,6 +11,10 @@ function push(num){
     }
 }
 
+function estaVazia(){
+    return topo == -1;
+}
+
 function pop(){
     if (topo != -1){
         let num = elementos[topo];
@@ -23,7 +27,7 @@ function pop(){
 
 // ------- usando a pilha --------------- //
 
-
+/*
 push(10);
 push(20);
 push(30);
@@ -34,5 +38,20 @@ console.log(pop());
 console.log(pop());
 console.log(pop());
 console.log(pop());
+*/
 
+var numDecimal = 10;
+var resto;
 
+console.log("Hora de empilhar")
+while(numDecimal != 0){
+    resto = parseInt(numDecimal % 2);
+    push(resto);
+    console.log(resto);
+    numDecimal = parseInt(numDecimal / 2);
+}
+
+console.log("Desempilhando....")
+while (!estaVazia()){
+    console.log(pop());
+}
